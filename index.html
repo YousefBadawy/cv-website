@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Youssef Badawy - CV</title>
+    <title>Youssef Badawy CV</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <div class="container">
 
-<h1>Youssef Badawy</h1>
-<h2>Computer Engineering Student</h2>
+    <h1>Youssef Badawy</h1>
+    <h2>Computer Engineering Student</h2>
 
-<img src="images/profile.jpg" class="profile">
+    <img src="images/profile.jpg" class="profile">
 
-<h3>Profile</h3>
-<p>
-Computer Engineering student at The American University in Cairo with strong
-experience in algorithms, hardware design, and system development.
-Passionate about technology, problem solving, and building innovative systems.
-</p>
+    <p id="welcome"></p>
 
-<h3>Education</h3>
-<p>
-American University in Cairo (AUC)<br>
-Computer Engineering
-</p>
+    <button onclick="toggleMode()">Toggle Dark Mode</button>
 
-<h3>Skills</h3>
-<ul>
-<li>C++ Programming</li>
-<li>Python</li>
-<li>Verilog</li>
-<li>Algorithms & Data Structures</li>
-<li>Digital Design</li>
-<li>Git & GitHub</li>
-</ul>
+    <h3>Profile</h3>
+    <p>
+        Computer Engineering student at The American University in Cairo with strong experience in algorithms, hardware design, and system development.
+    </p>
 
-<h3>Projects</h3>
-<ul>
-<li>CPU Design using Vivado</li>
-<li>Sudoku Game using C++ and QT</li>
-<li>Algorithm Time Complexity Measurement Tool</li>
-<li>Airport Air Traffic Management System</li>
-</ul>
+    <h3 onclick="toggleSection('education')">Education (Click)</h3>
+    <p id="education">
+        American University in Cairo (AUC)<br>
+        Computer Engineering
+    </p>
 
-<h3>Achievements</h3>
-<ul>
-<li>Research Presentation at EURECA Conference</li>
-<li>20 Under 20 Program Participant</li>
-<li>Competitive Swimmer for 15+ Years</li>
-</ul>
+    <h3 onclick="toggleSection('skills')">Skills (Click)</h3>
+    <ul id="skills">
+        <li>C++ Programming</li>
+        <li>Python</li>
+        <li>Verilog</li>
+        <li>Algorithms & Data Structures</li>
+        <li>Digital Design</li>
+        <li>Git & GitHub</li>
+    </ul>
 
-<h3>Contact</h3>
-<p>
-Email: youremail@email.com<br>
-LinkedIn: linkedin.com/in/youssefbadawy
-</p>
+    <input type="text" id="newSkill" placeholder="Enter new skill">
+    <button onclick="addSkill()">Add Skill</button>
+
+    <h3 onclick="toggleSection('projects')">Projects (Click)</h3>
+    <ul id="projects">
+        <li onclick="showProject(this)">CPU Design using Vivado</li>
+        <li onclick="showProject(this)">Sudoku Game using C++ and QT</li>
+        <li onclick="showProject(this)">Algorithm Time Complexity Tool</li>
+        <li onclick="showProject(this)">Airport Air Traffic Management System</li>
+    </ul>
+
+    <p id="projectDetails"></p>
+
+    <h3 onclick="toggleSection('achievements')">Achievements (Click)</h3>
+    <ul id="achievements">
+        <li>Research Presentation at EURECA Conference</li>
+        <li>20 Under 20 Program Participant</li>
+        <li>Competitive Swimmer for 15+ Years</li>
+    </ul>
+
+    <h3>Contact</h3>
+    <p>Email: youremail@email.com</p>
+    <p>LinkedIn: linkedin.com/in/youssefbadawy</p>
+
+    <h3>Contact Form</h3>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Name"><br><br>
+        <input type="text" id="email" placeholder="Email"><br><br>
+        <textarea id="message" placeholder="Message"></textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+
+    <p id="formMessage"></p>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

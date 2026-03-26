@@ -29,6 +29,7 @@ h3{
     padding: 8px;
     border-radius: 5px;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 p{
@@ -49,4 +50,32 @@ li{
     display: block;
     margin: 20px auto;
     border: 4px solid #39a0ed;
+}
+
+button{
+    margin: 10px 0;
+    padding: 8px 12px;
+    border: none;
+    background: #39a0ed;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 8px;
+}
+
+.dark{
+    background: #121212;
+    color: white;
+}
+
+.dark .container{
+    background: #1e1e1e;
+}
+
+.dark p{
+    color: #ddd;
 }
