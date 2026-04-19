@@ -59,3 +59,24 @@ function validateForm() {
 
     return false;
 }
+
+/*  WORKING API */
+async function getQuote() {
+    var quoteBox = document.getElementById("quote");
+    quoteBox.innerText = "Loading...";
+
+    try {
+        const response = await fetch("https://dummyjson.com/quotes/random");
+
+        if (!response.ok) {
+            throw new Error("Error fetching data");
+        }
+
+        const data = await response.json();
+
+        quoteBox.innerText = data.quote + " - " + data.author;
+
+    } catch (error) {
+        quoteBox.innerText = "Failed to load quote.";
+    }
+}
